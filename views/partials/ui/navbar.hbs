@@ -1,0 +1,42 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+  
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-mdb-target="#collapse" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse">
+
+      <a class="navbar-brand mt-2 mt-lg-0" href="/profile">
+        <img src="/images/taco.jpg" height="35" alt="Taco logo" loading="lazy"/>
+      </a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          {{#if currentUser}}
+            <li class="nav-item"><a class="nav-link {{navActive currentPath '/myLists'}}" aria-current="page" href="/myLists">My Lists</a></li>
+            <li class="nav-item"><a class="nav-link {{navActive currentPath '/establishments'}}" aria-current="page" href="/establishments">Establishments</a></li>
+            <li class="nav-item"><a class="nav-link {{navActive currentPath '/profile'}}" aria-current="page" href="/profile">Profile</a></li>
+          {{/if}}        
+        </ul>
+
+          <a class="navbar-nav mx-3" href="/profile" role="button" aria-expanded="false">
+            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="35" alt="profile" loading="lazy"/>
+          </a>
+        <ul class="navbar-nav mb-2 mb-lg-0 mx-2"> 
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="/logout">Log out<i class="fa fa-sign-out"></i></a></li>
+        </ul>
+
+    </div>
+    
+  </div>
+</nav>
+
+<!--<ul class="navbar-nav mb-2 mb-lg-0">
+          {{#if currentUser}}
+            <li class="nav-item"><a class="nav-link" aria-current="page" href="/logout"><i class="fa fa-sign-out"></i></a></li>
+          {{else}}
+            <li class="nav-item"><a class="nav-link {{navActive currentPath '/login'}}" aria-current="page" href="/login">Login</a></li>
+            <li class="nav-item"><a class="nav-link {{navActive currentPath '/signup'}}" aria-current="page" href="/signup">Register</a></li>
+          {{/if}}
+</ul>
+-->

@@ -7,6 +7,11 @@ router.get('/', (req, res, next) => {
 })
 
 router.get('/signup', users.create);
-router.post('/signup', users.doCreate)
+router.post('/signup', users.doCreate);
+
+router.get('/login', users.login);
+router.post('/login', users.doLogin);
+
+router.get('/profile', users.profile);
 
 module.exports = router;

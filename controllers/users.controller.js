@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 
 module.exports.create = (req, res, next) => {
     res.render('users/signup');
-}
+};
 
 module.exports.doCreate = (req, res, next) => {
     const user = req.body;
@@ -19,9 +19,39 @@ module.exports.doCreate = (req, res, next) => {
         })
         .catch((error) => {
             if (error instanceof mongoose.Error.ValidationError) {
-                res.status(400).render('users/signup', { user, errors: error.errors })
+                res.status(400).render('users/signup', { user, errors: error.errors });
             } else {
-                next(error)
+                next(error);
             }
         });
 };
+
+module.exports.login = (req, res, next) => {
+    res.render('users/login');
+};
+
+module.exports.doLogin = (req, res, next) => {
+    User.findOne({ username: req.body.username })
+        .then((userFound) => {
+            if (userFound) {
+                return userFound.checkPassword(req.body.password)
+                    .then((match) => {
+                        if (match) {
+                            req.session.userId = userFound.id;
+                            res.redirect('/profile');
+                        } else {
+                            res.status(401).render('users/login', { userFound: req.body, errors: { password: 'Invalid username or password'} });
+                        }
+                    })
+            } else {
+                res.status(401).render('users/login', { userFound: req.body, errors: { password: 'Invalid username or password'} });
+            }
+        })
+        .catch(next);
+};
+
+module.exports.profile = (req, res, next) => {
+    res.render('users/profile');
+};
+
+//TO DO: logout
