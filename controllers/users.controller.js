@@ -1,5 +1,5 @@
 const User = require('../models/user.model');
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 module.exports.create = (req, res, next) => {
     res.render('users/signup');
@@ -54,4 +54,10 @@ module.exports.profile = (req, res, next) => {
     res.render('users/profile');
 };
 
-//TO DO: logout
+
+module.exports.logout = (req, res, next) => {
+    req.session.destroy()
+    req.session = null
+    res.clearCookie('connect.sid')
+    res.redirect('/login')
+}

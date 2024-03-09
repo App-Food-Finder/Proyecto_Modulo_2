@@ -1,0 +1,35 @@
+<form action="/create-list" method="POST">
+
+    <div class="container">
+        <div class="input-group mb-3">
+            <span class="input-group-text"><i class="fa fa-tag fa-fw"></i></span>
+            <input type="text" name="title" value="{{list.title}}"class="form-control {{#if errors.title}}is-invalid {{/if}}" placeholder="Title">
+            {{#if errors.title}}<div class="invalid-feedback">{{errors.title}}</div>{{/if}}
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text"><i class="fa fa-cutlery fa-fw"></i></span>
+            <input type="text" name="establishment" value="{{list.establishment}}"class="form-control {{#if errors.establishment}}is-invalid {{/if}}" placeholder="Establishment">
+            {{#if errors.establishment}}<div class="invalid-feedback">{{errors.establishment}}</div>{{/if}}
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text"><i class="fa fa-book fa-fw"></i></span>
+            <input type="text" name="description" value="{{list.description}}"class="form-control {{#if errors.description}}is-invalid {{/if}}" placeholder="Description">
+            {{#if errors.description}}<div class="invalid-feedback">{{errors.description}}</div>{{/if}}
+        </div>
+        
+        <div class="input-group mb-3">
+            <span class="input-group-text"><i class="fa fa-building fa-fw" aria-hidden="true"></i></span>
+            <input type="text" name="city" value="{{list.city}}"class="form-control {{#if errors.city}}is-invalid {{/if}}" placeholder="City">
+            {{#if errors.city}}<div class="invalid-feedback">{{errors.city}}</div>{{/if}}
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-outline-primary">Create list</button>
+        </div>
+    </div>
+    
+    
+</form>
+

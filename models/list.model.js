@@ -20,24 +20,25 @@ const listSchema = new Schema(
     {
         title: {
             type: String,
-            required: true
+            required: [true, 'Title is required'],
+            minLength: [5, 'Title must contain at least 5 characters']
         },
         establishment: {
             type: String,
-            required: true
+            required: [true, 'You must indicate an establishment']
         },
         description: {
             type: String,
-            maxLength: 140
+            maxLength: [140, 'Description can not contain more than 140 characters']
         },
-        /**owner: {
+        owner: {
             type: mongoose.Types.ObjectId,
             ref:'User',
-            require: true
-        },*/
+            required: true
+        },
         city: {
             type: String,
-            require: true
+            required: [true, 'City is required']
         }
     },
     { timestamps: true }
