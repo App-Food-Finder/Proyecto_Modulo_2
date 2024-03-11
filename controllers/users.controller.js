@@ -1,5 +1,6 @@
 const User = require('../models/user.model');
 const mongoose = require('mongoose');
+const List = require('../models/list.model');
 
 module.exports.create = (req, res, next) => {
     res.render('users/signup');
@@ -51,7 +52,9 @@ module.exports.doLogin = (req, res, next) => {
 };
 
 module.exports.profile = (req, res, next) => {
-    res.render('users/profile');
+    List.find()
+    .then((lists) => res.render('users/profile', { lists }))
+    .catch(next);
 };
 
 

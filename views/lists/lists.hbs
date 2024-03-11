@@ -1,7 +1,9 @@
         
-        <ul>
-            <li><a href="/create-list">Create list</a></li>
-        </ul>
+  
+    <div>
+      <button type="submit" class="raise"><a class="me-auto" href="/create-list">Create list</a></button>
+    </div>
+          
 
 <!-- TODO: Colocar las cards en columnas de 3 -->
 
@@ -14,12 +16,8 @@
     <div class="card-body">
         <div class="">
             <h3>Title: {{list.title}}</h3>
-            <h4>Establishment: {{list.establishment}}</h4>
-            <h4>Description: {{list.description}}</h4>
-            <!--TODO: <h3>Owner: {{list.owner.username}}</h3>-->
-            <small>City: {{list.city}}</small>
-            <a class="me-auto" href="/lists/{{list.id}}">Detail</a>
-            <a class="me-auto ml-5" href="/lists/{{list.id}}/delete">Delete</a>
+            <button type="submit" class="raise"><a class="me-auto" href="/lists/{{list.id}}">Detail</a></button>
+            <button type="submit" class="raise"><a class="me-auto ml-5" href="/lists/{{list.id}}/delete">Delete</a></button>
         </div>
       </div>
     </div>

@@ -33,7 +33,9 @@ router.post('/create-list', secure.isAuthenticated, lists.doCreate);
 router.get('/lists', secure.isAuthenticated, lists.viewLists);
 
 router.get('/lists/:id', secure.isAuthenticated, lists.detail);
+
 router.get('/lists/:id/edit', secure.isAuthenticated, lists.edit);
+router.post('/lists/:id/edit', secure.isAuthenticated, lists.doEdit);
 
 router.get('/lists/:id/delete', secure.isAuthenticated, lists.delete);
 

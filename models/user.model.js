@@ -29,6 +29,10 @@ const userSchema = new Schema(
             required: [true, 'Phone number is required'],
             unique: true,
             minLength: [9, 'Number must have at least 9 characters']
+        },
+        description: {
+            type: String,
+            maxLength: [140, 'Description can not contain more than 140 characters']
         }
         //keyFood:
     },

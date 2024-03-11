@@ -49,12 +49,36 @@ module.exports.edit = (req, res, next) => {
     List.findById(id)
         .then((lists) => {
             if (lists) {
-                res.render('lists/edit', { lists })
+                res.render('lists/edit', { lists });
             } else {
-                next(createError(404, 'List not found'))
+                next(createError(404, 'List not found'));
             }
         })
         .catch(next);
+}
+
+module.exports.doEdit = (req, res, next) => {
+    const list = req.body;
+
+    list.id = req.params.id;
+
+    List.findByIdAndUpdate(req.params.id, req.body, { runValidators: true})
+        .then((list) => {
+            if (list) {
+                res.redirect(`/lists/${list.id}`);
+            } else {
+                next(createError(404, 'List not found'));
+            }
+        })
+        .catch((error => {
+            if (error instanceof mongoose.Error.ValidationError) {
+                res
+                    .status(400)
+                    .render('lists/edit', { list: req.body, errors: error.errors });
+            } else {
+                next(error);
+            }
+        }));
 }
 
 module.exports.delete = (req, res, next) => {
