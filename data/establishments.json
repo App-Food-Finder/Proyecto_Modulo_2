@@ -1,0 +1,4 @@
+[
+    { "name": "Sanchez-Beato", "description": "Hola", "foodType": "Español", "location": "Toledo", "price": 70 },
+    { "name": "Fábula Taberna", "description": "Hola", "foodType": "Mediterraneo", "location": "Toledo", "price": 20 }
+]

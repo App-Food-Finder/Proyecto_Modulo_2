@@ -1,0 +1,15 @@
+FEED ESTABLISHMENTS
+<div>
+
+     <button type="submit" class="raise"><a href="/create-establishment">Create establishment</a></button>
+
+</div>
+
+<div>
+    {{#each establishments as |establishment|}}
+        <div>
+             <h3>{{establishment.name}}</h3>
+            <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i></button>
+        </div>
+    {{/each}}
+</div>

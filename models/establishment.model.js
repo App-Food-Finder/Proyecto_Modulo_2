@@ -6,7 +6,7 @@ const establishmentSchema = new Schema(
     {
         name: {
             type: String,
-            required: true
+            required: [true, 'Name is required']
         },
         description: {
             type: String,
@@ -16,16 +16,15 @@ const establishmentSchema = new Schema(
         //photo:
         foodType: {
             type: [String],
-            required: true
+            required: [true, 'Please, indicate at least one food type']
         },
         location: {
             type: String,
-            required: true,
-            unique: true
+            required: [true, 'Location is required']
         },
         price: {
             type: Number,
-            required: true,
+            required: [true, 'Indicate an average price']
         }
     },
     { timestamps: true }

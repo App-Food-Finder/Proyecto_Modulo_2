@@ -5,6 +5,13 @@
   transform: translateY(-0.25em);
 }
 
+.raise {
+  transition: 0.15s ease-in-out;
+}
+
+.profile-photo {
+  border-radius: 50%;
+}
 
 button {
   color: black;
