@@ -18,7 +18,6 @@ app.use(express.static(`${__dirname}/public`));
 app.use(logger('dev'));
 app.use(express.urlencoded());
 
-
 const session = require('./configs/session.config')
 app.use(session.session)
 app.use(session.loadUser)
@@ -36,5 +35,19 @@ app.use((error, req, res, next) => {
     console.error(error)
     res.status(error.status).render(`errors/${error.status}`)
 })
+
+/** POPUP:
+
+let popup = document.getElementById('popup');
+
+function openPopup() {
+    popup.classList.add('open-popup');
+};
+
+function closePopup() {
+    popup.classList.remove('open-popup');
+};
+
+*/
 
 app.listen(3000, () => console.info('Application ready'));

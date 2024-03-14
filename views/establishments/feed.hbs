@@ -5,11 +5,22 @@ FEED ESTABLISHMENTS
 
 </div>
 
-<div>
+<ul class="list-group">
     {{#each establishments as |establishment|}}
-        <div>
-             <h3>{{establishment.name}}</h3>
-            <button type="submit"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    <li class="list-group-item d-flex">
+        <h1>{{establishment.name}}</h1>
+
+        <div class="box">
+            <a class="fa fa-plus" href="/lists/:listId"></a>
         </div>
+        <div id="popup1" class="overlay">
+            <div class="popup">
+                {{#each lists as |list|}}
+                    <p>{{list.title}}</p>
+                {{/each}}
+                <a class="close" href="/establishments">&times;</a>
+            </div>
+        </div>
+    </li>
     {{/each}}
-</div>
+</ul>

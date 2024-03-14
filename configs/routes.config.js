@@ -3,6 +3,8 @@ const users = require('../controllers/users.controller');
 const home = require('../controllers/home.controller');
 const lists = require('../controllers/lists.controller');
 const establishments = require('../controllers/establishments.controller');
+const addToList = require('../controllers/addToList.controller')
+const comment = require('../controllers/comments.controller')
 const secure = require('../middlewares/auth.middleware')
 const router = express.Router();
 
@@ -39,6 +41,7 @@ router.post('/lists/:id/edit', secure.isAuthenticated, lists.doEdit);
 
 router.get('/lists/:id/delete', secure.isAuthenticated, lists.delete);
 
+
 //ESTABLISHMENTS//
 router.get('/establishments', secure.isAuthenticated, establishments.search);
 router.get('/establishments/:id', secure.isAuthenticated, establishments.search);
@@ -47,5 +50,10 @@ router.get('/create-establishment', secure.isAuthenticated, establishments.creat
 router.post('/create-establishment', secure.isAuthenticated, establishments.doCreate)
 
 
+//RELATIONS//
+router.post('/lists/:listId', secure.isAuthenticated, addToList.add);
+
+
+//MESSAGES
 
 module.exports = router;
