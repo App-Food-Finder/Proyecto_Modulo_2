@@ -8,10 +8,10 @@ FEED ESTABLISHMENTS
 <ul class="list-group">
     {{#each establishments as |establishment|}}
     <li class="list-group-item d-flex">
-        <h1>{{establishment.name}}</h1>
 
+        <a class="me-auto" href="/establishments/{{establishment.id}}">{{establishment.name}}</a>
         <div class="box">
-            <a class="fa fa-plus" href="/lists/:listId"></a>
+            <a class="fa fa-plus" href="/establishments/{{establishment.id}}/add-to-list"></a>
         </div>
         <div id="popup1" class="overlay">
             <div class="popup">

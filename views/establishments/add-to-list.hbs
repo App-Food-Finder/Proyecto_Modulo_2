@@ -1,0 +1,9 @@
+<form method="POST" action="/establishments/{{establishmentId}}/add-to-list">
+    <select name="list">
+        {{#each lists as |list|}}
+            <option value="{{list.id}}">{{list.title}}</option>
+        {{/each}}
+    </select>
+
+    <button type="submit">Add</button>
+</form>

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const addToListSchema = new Schema(
+const schema = new Schema(
     {
         establishment: {
             type: mongoose.Types.ObjectId,
@@ -17,5 +17,5 @@ const addToListSchema = new Schema(
     { timestamps: true }
 );
 
-const AddToList = mongoose.model('AddToList', addToListSchema);
-module.exports = AddToList;
+const EstablishmentList = mongoose.model('EstablishmentList', schema);
+module.exports = EstablishmentList;

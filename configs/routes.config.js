@@ -3,9 +3,8 @@ const users = require('../controllers/users.controller');
 const home = require('../controllers/home.controller');
 const lists = require('../controllers/lists.controller');
 const establishments = require('../controllers/establishments.controller');
-const addToList = require('../controllers/addToList.controller')
-const comment = require('../controllers/comments.controller')
-const secure = require('../middlewares/auth.middleware')
+const comment = require('../controllers/comments.controller');
+const secure = require('../middlewares/auth.middleware');
 const router = express.Router();
 
 //USERS//
@@ -15,7 +14,6 @@ router.get('/', (req, res, next) => {
 
 //HOME//
 router.get('/home', secure.isAuthenticated, home.home);
-
 
 //USERS//
 router.get('/signup', users.create);
@@ -44,16 +42,16 @@ router.get('/lists/:id/delete', secure.isAuthenticated, lists.delete);
 
 //ESTABLISHMENTS//
 router.get('/establishments', secure.isAuthenticated, establishments.search);
-router.get('/establishments/:id', secure.isAuthenticated, establishments.search);
+router.get('/establishments/:id', secure.isAuthenticated, establishments.detail);
 
-router.get('/create-establishment', secure.isAuthenticated, establishments.create)
-router.post('/create-establishment', secure.isAuthenticated, establishments.doCreate)
+router.get('/establishments/:id/add-to-list', secure.isAuthenticated, establishments.addToList);
+router.post('/establishments/:id/add-to-list', secure.isAuthenticated, establishments.doAddToList);
 
+router.get('/create-establishment', secure.isAuthenticated, establishments.create);
+router.post('/create-establishment', secure.isAuthenticated, establishments.doCreate);
 
-//RELATIONS//
-router.post('/lists/:listId', secure.isAuthenticated, addToList.add);
+//COMMENTS
+router.post('/establishments/:establishmentId/comment', secure.isAuthenticated, comment.doCreate);
 
-
-//MESSAGES
 
 module.exports = router;

@@ -13,7 +13,6 @@
 */
 
 const mongoose = require('mongoose');
-
 const Schema = mongoose.Schema;
 
 const listSchema = new Schema(
@@ -38,7 +37,7 @@ const listSchema = new Schema(
         },
         city: {
             type: String,
-            required: [true, 'City is required']
+            required: false
         }
     },
     { timestamps: true }

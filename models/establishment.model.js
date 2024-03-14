@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const Schema = mongoose.Schema;
 
 const establishmentSchema = new Schema(
@@ -28,8 +27,14 @@ const establishmentSchema = new Schema(
         }
     },
     { timestamps: true }
-)
+);
+
+establishmentSchema.virtual('comments', {
+    ref: 'Comment',
+    localField: '_id',
+    foreignField: 'establishment',
+    justOne: false
+});
 
 const Establishment = mongoose.model('Establishment', establishmentSchema);
-
 module.exports = Establishment;

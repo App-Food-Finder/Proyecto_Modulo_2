@@ -1,0 +1,26 @@
+
+
+<h1>{{establishment.name}}</h1>
+<p>{{establishment.description}}</p>
+<p>{{establishment.foodType}}</p>
+<p>{{establishment.location}}</p>
+<p>{{establishment.price}}</p>
+
+<!-- INICIO - APARTADO COMENTARIOS: -->
+<div>
+    {{#each establishment.comments as |comment|}}
+    <div>
+
+    </div>
+    {{/each}}
+</div>
+<!-- FIN - APARTADO COMENTARIOS: -->
+
+<form action="/establishments/{{establishment.id}}/comment" method="POST">
+    <div class="input-group">
+        <span class="input-group-text"><i class="fa fa-edit"></i></span>
+        <textarea class="form-control {{#if errors.text}}is-invalid {{/if}}" name="text"></textarea>
+        <button class="btn btn-outline-secondary" type="submit" value="{{message.text}}"><i class="fa fa-send"></i></button>
+        {{#if errors.text}} <div class="invalid-feedback">{{errors.text}}</div>{{/if}}
+    </div>
+</form>
