@@ -22,6 +22,9 @@ module.exports.detail = (req, res, next) => {
     Establishment.findById(id)
         .populate({
             path: 'comments',
+            populate: {
+                path: 'owner'
+            }
         })
         .then((establishment) => {
             if (!establishment) {
@@ -66,7 +69,7 @@ module.exports.doAddToList = (req, res, next) => {
         establishment: req.params.id
     })
         .then((list) => {
-            res.send('Todo');
+            res.redirect('/lists');
         })
         .catch(next)
 }
@@ -75,15 +78,6 @@ module.exports.doAddToList = (req, res, next) => {
 
 
 /** TODO:
- * Funciones:
-    - doCreate
-    - delete
-    - details
-    - edit
-
- * Crear lista de favoritos donde:
-    - Guardar establecimientos ya creados que nos gusten, y poder eliminarlos de favoritos
-    - Funciones:
-        - favorite
-        - deleteFavorite
+    - favorite
+    - deleteFavorite
 */

@@ -36,18 +36,5 @@ app.use((error, req, res, next) => {
     res.status(error.status).render(`errors/${error.status}`)
 })
 
-/** POPUP:
-
-let popup = document.getElementById('popup');
-
-function openPopup() {
-    popup.classList.add('open-popup');
-};
-
-function closePopup() {
-    popup.classList.remove('open-popup');
-};
-
-*/
 
 app.listen(3000, () => console.info('Application ready'));

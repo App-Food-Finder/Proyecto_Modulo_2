@@ -5,6 +5,12 @@
         <!--TODO: <h3>Owner: {{list.owner.username}}</h3>-->
         <small>City: {{lists.city}}</small>
         
+        <div>
+            {{#each lists.added as |added|}}
+            <p>{{added.establishment.name}}</p>
+            {{/each}}
+        </div>
+        
         <div class="mt-3">
             <button class="raise"><a href="/lists/{{lists.id}}/edit">Edit</a></button>
         </div>

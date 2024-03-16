@@ -43,6 +43,13 @@ const listSchema = new Schema(
     { timestamps: true }
 );
 
+listSchema.virtual('added', {
+    ref: 'EstablishmentList',
+    localField: '_id',
+    foreignField: 'list',
+    justOne: false
+});
+
 const List = mongoose.model('List', listSchema);
 
 module.exports = List

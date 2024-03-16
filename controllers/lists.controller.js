@@ -34,6 +34,12 @@ module.exports.detail = (req, res, next) => {
     const id = req.params.id;
     
     List.findById(id)
+        .populate({
+            path: 'added',
+            populate: {
+                path: 'establishment'
+            }
+        })
         .then((lists) => {
             if (lists) {
                 res.render('lists/detail', { lists })
@@ -59,7 +65,6 @@ module.exports.edit = (req, res, next) => {
 
 module.exports.doEdit = (req, res, next) => {
     const list = req.body;
-
     list.id = req.params.id;
 
     List.findByIdAndUpdate(req.params.id, req.body, { runValidators: true})
@@ -89,7 +94,7 @@ module.exports.delete = (req, res, next) => {
             if(!lists) {
                 next(createError(404, 'List not found!'))
             } else if (lists.owner != req.user.id) {
-                next(createError(403, 'Forbidden!'))
+                next(createError(403, '¡NO PUEDES PASAAAAR!'))
             } else {
                 return List.deleteOne( { _id: id} )
                     .then(() => res.redirect('/lists'));

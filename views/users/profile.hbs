@@ -33,16 +33,22 @@
     </div>
     </div>
 
-<!-- TODO: Pintar listas del usuario por su owner -->
-    <div class="container">
-        <h4>My lists</h4>
+    <button class="raise"><a href="/users/{{currentUser.id}}/edit">Edit</a></button>
+    
+    <!-- <form action="/profile/delete" method="POST">
+        <button class="raise" type="submit">Delete</button>
+    </form> -->
+
+    <!-- TODO: Pintar listas del usuario por su owner
+        <div class="container">
+            <h4>My lists</h4>
+            </div>
+            {{#each lists as |list|}}
+                <li class="list-group-item d-flex">
+                    <a href="/lists/{{list.id}}">{{list.title}}</a>
+                </li>
+            {{/each}}
         </div>
-        {{#each lists as |list|}}
-            <li class="list-group-item d-flex">
-                <a href="/lists/{{list.id}}">{{list.title}}</a>
-            </li>
-        {{/each}}
-    </div>
-<!-- TODO: Hacer cards de listas y que, al clicar en una, te lleve a los detalles-->
+    TODO: Hacer cards de listas y que, al clicar en una, te lleve a los detalles-->
 </div>
 </main>

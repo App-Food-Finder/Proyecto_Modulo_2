@@ -26,6 +26,10 @@ router.get('/logout', users.logout);
 
 router.get('/profile', secure.isAuthenticated, users.profile);
 
+router.get('/users/:id/edit', secure.isAuthenticated, users.edit);
+router.post('/users/:id/edit', secure.isAuthenticated, users.doEdit);
+
+// TODO outer.post('/users/:id/delete', secure.isAuthenticated, users.delete);
 
 //LISTS//
 router.get('/create-list', secure.isAuthenticated, lists.create);
@@ -51,7 +55,8 @@ router.get('/create-establishment', secure.isAuthenticated, establishments.creat
 router.post('/create-establishment', secure.isAuthenticated, establishments.doCreate);
 
 //COMMENTS
-router.post('/establishments/:establishmentId/comment', secure.isAuthenticated, comment.doCreate);
+router.post('/establishments/:establishmentId/comments', secure.isAuthenticated, comment.doCreate);
+router.post('/establishments/:establishmentId/comments/:id/delete', secure.isAuthenticated, comment.doDelete)
 
 
 module.exports = router;

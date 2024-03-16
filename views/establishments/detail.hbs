@@ -10,13 +10,19 @@
 <div>
     {{#each establishment.comments as |comment|}}
     <div>
-
+        <span class="me-auto">{{comment.owner.username}}</span>
+        <p>{{comment.text}}</p>
+        {{#isOwnedBy comment ../currentUser}}
+        <form action="/establishments/{{comment.establishment}}/comments/{{comment.id}}/delete" method="POST">
+            <button class="raise" type="submit">Delete</button>
+        </form>
+        {{/isOwnedBy}}
     </div>
     {{/each}}
 </div>
 <!-- FIN - APARTADO COMENTARIOS: -->
 
-<form action="/establishments/{{establishment.id}}/comment" method="POST">
+<form action="/establishments/{{establishment.id}}/comments" method="POST">
     <div class="input-group">
         <span class="input-group-text"><i class="fa fa-edit"></i></span>
         <textarea class="form-control {{#if errors.text}}is-invalid {{/if}}" name="text"></textarea>

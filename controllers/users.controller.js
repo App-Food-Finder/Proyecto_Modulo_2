@@ -1,6 +1,7 @@
 const User = require('../models/user.model');
 const mongoose = require('mongoose');
 const List = require('../models/list.model');
+const createError = require('http-errors');
 
 module.exports.create = (req, res, next) => {
     res.render('users/signup');
@@ -63,4 +64,27 @@ module.exports.logout = (req, res, next) => {
     req.session = null
     res.clearCookie('connect.sid')
     res.redirect('/login')
-}
+};
+
+module.exports.edit = (req, res, next) => {
+    res.render('users/edit', { user: req.user });
+};
+
+
+module.exports.doEdit = (req, res, next) => {
+    Object.assign(req.user, req.body)
+        .save()
+        .then(() => res.redirect('/profile'))
+        .catch(next);
+};
+
+/** TODO: module.exports.delete = (req, res, next) => {
+    User.findByIdAndDelete(req.user.id)
+        .then((user) => {
+            if (user) {
+                res.redirect('/');
+            } else {
+                next(createError(404, 'User not found'));
+            }
+        }).catch(next);
+}; */

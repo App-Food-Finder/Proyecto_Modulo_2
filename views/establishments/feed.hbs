@@ -13,14 +13,6 @@ FEED ESTABLISHMENTS
         <div class="box">
             <a class="fa fa-plus" href="/establishments/{{establishment.id}}/add-to-list"></a>
         </div>
-        <div id="popup1" class="overlay">
-            <div class="popup">
-                {{#each lists as |list|}}
-                    <p>{{list.title}}</p>
-                {{/each}}
-                <a class="close" href="/establishments">&times;</a>
-            </div>
-        </div>
     </li>
     {{/each}}
 </ul>
