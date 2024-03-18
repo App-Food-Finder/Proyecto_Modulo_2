@@ -1,4 +1,21 @@
 [
-    { "name": "Sanchez-Beato", "description": "Hola", "foodType": "Español", "location": "Toledo", "price": 70 },
-    { "name": "Fábula Taberna", "description": "Hola", "foodType": "Mediterraneo", "location": "Toledo", "price": 20 }
+    { "name": "Sanchez-Beato", "description": "Una experiencia gastronómica única, donde el comensal es el protagonista", "foodType": "Español", "location": "Toledo", "price": 70 },
+    { "name": "La Ermitaña", "description": "Cocina tradicional y divertida, situado en el Valle de Toledo", "foodType": "Mediterranea", "location": "Toledo", "price": 40 },
+    { "name": "Raices - Carlos Maldonado", "description": "El chef Carlos Maldonado no entiende de límites y eso caracteriza su cocina, vinculada a los sabores y productos manchegos", "foodType": "Español", "location": "Talavera de la Reina", "price": 100 },
+    { "name": "StreetXo", "description": "Restaurante moderno, de ambiente animado, que sirve platos internacionales innovadores y cócteles de la mano del chef Dabiz Muñoz.", "foodType": "Contemporánea", "location": "Madrid", "price": 60 },
+    { "name": "Kippu", "description": "La decoración de este restaurante te transporta a las calles más bulliciosas de China o Japón y su cocina es un fiel reflejo del auténtico street food del Lejano Oriente.", "foodType": "Japonés", "location": "Madrid", "price": 40 },
+    { "name": "Txatei", "description": "TxaTei es uno de los restaurantes japoneses madrileños más valorados.", "foodType": "Japonés", "location": "Madrid", "price": 50 },
+    { "name": "El Bohío", "description": "El televisivo y mediático chef, Pepe Rodríguez, está al frente de este restaurante junto con su hermano Diego.", "foodType": "Castellano", "location": "Illescas", "price": 100 },
+    { "name": "Ancestral", "description": "Un restaurante en el que los grandes protagonistas son el fuego y el humo", "foodType": "Asador", "location": "Illescas", "price": 80 },
+    { "name": "En la Parra", "description": "La chef Rocío Parra, siempre bien apoyada en la sala por su marido (Alberto Rodríguez), sigue fiel a una cocina moderna de raíces locales y tradicionales.", "foodType": "Español", "location": "Salamanca", "price": 45 },
+    { "name": "Víctor Gutiérrez", "description": "El chef Víctor Gutiérrez fusiona el excelso producto regional con los sabores de su Perú natal", "foodType": "Castellano, Peruano", "location": "Salamanca", "price": 75 },
+    { "name": "ConSentido", "description": "Destaca por su emplazamiento a pocos pasos de la monumental Plaza Mayor y plantea una cocina contemporánea", "foodType": "Español", "location": "Salamanca", "price": 65 },
+    { "name": "Restaurante Omeraki By Alberto Chicote", "description": "Después de más de 35 años de experiencia en la restauración, Inmaculada Nuñez y Alberto Chicote deciden poner en marcha su proyecto más personal.", "foodType": "Español", "location": "Madrid", "price": 90 },
+    { "name": "Asador Etxebarri", "description": "Exclusivo restaurante de cocina vasca en un pueblo que sirve carne y pescado a la brasa y ofrece un menú degustación.", "foodType": "Español", "location": "Axpe", "price": 100 },
+    { "name": "Quique Dacosta - Restaurante Denia", "description": "Refleja la personalidad del chef homónimo, que ha sido distinguido con la Medalla de Oro al Mérito en las Bellas Artes 2020. ", "foodType": "Mediterranea", "location": "Denia", "price": 175 },
+    { "name": "Restaurante Azurmendi", "description": "Cocina moderna con una presentación artística en un lustroso restaurante sostenible situado en la ladera de una colina.", "foodType": "Vasca", "location": "Larrabetzu", "price": 60 },
+    { "name": "Restaurante Aponiente", "description": "Restaurante refinado de renombre con menús de varios platos, maridajes con vinos y platos de marisco experimentales.", "foodType": "Mediterranea", "location": "El Puerto de Santa Maria", "price": 200},
+    { "name": "Noor Restaurant", "description": "Restaurante moderno de alta cocina, con toques de estilo neoárabe y centrado en la cocina andaluza refinada.", "foodType": "Mediterranea", "location": "Córdoba", "price": 160 },
+    { "name": "Restaurante Chirón", "description": "Platos creativos de mercado con inspiración manchega en un elegante comedor con una gran vidriera en el techo.", "foodType": "Española", "location": "Valdemoro", "price": 60},
+    { "name": "Orioko Barra", "description": "Situados a orillas de la playa de Orio, especializados en productos de nuestra tierra y nuestro mar para disfrutarlos a la parrilla.", "foodType": "Asador", "location": "Orio", "price": 40 }
 ]

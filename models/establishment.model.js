@@ -10,7 +10,7 @@ const establishmentSchema = new Schema(
         description: {
             type: String,
             required: true,
-            maxLength: 140
+            maxLength: 240
         },
         //photo:
         foodType: {
