@@ -26,6 +26,9 @@ module.exports.doCreate = (req, res, next) => {
 
 module.exports.viewLists = (req, res, next) => {
     List.find()
+        .populate({
+            path: 'owner'
+        })
         .then((lists) => res.render('lists/lists', { lists }))
         .catch(next)
 }

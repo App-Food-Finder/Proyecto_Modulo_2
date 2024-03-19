@@ -1,26 +1,21 @@
-        
-  
-    <div>
-      <button type="submit" class="raise"><a class="me-auto" href="/create-list">Create list</a></button>
-    </div>
-          
-
-<!-- TODO: Colocar las cards en columnas de 3 -->
-<div class="container d-flex justify-content-center mb-3">
-  {{#each lists as |list|}}
-<div class="row-cols-1 row-cols-md-2 g-4 mt-5" >
-  <div class="card" style="width: 25rem;">
-    <div class="card-header">
-      <!-- TODO: Foto subida por el usuario (¿Cómo?) (Preguntar a Nico) <img src="https://c0.wallpaperflare.com/preview/483/210/436/car-green-4x4-jeep.jpg" alt="rover" /> -->
-    </div>
-      <div class="card-body">
-        <div>
-            <h3>{{list.title}}</h3>
-            <button type="submit" class="raise"><a class="me-auto" href="/lists/{{list.id}}">Detail</a></button>
-            <button type="submit" class="raise"><a class="me-auto ml-5" href="/lists/{{list.id}}/delete">Delete</a></button>
-        </div>
-      </div>
-    </div>
-  </div>
-{{/each}}
+<div>
+  <button type="submit" class="raise"><a class="me-auto" href="/create-list">Create list</a></button>
 </div>
+
+{{#each lists as |list|}}
+<div class="card card-list mb-3 g-4">
+
+  <div class="">   {{!--hacer que al pasar el cursor se enfoque --}}
+      <img src="/establishment/toledo/2021-05-31.jpg" class="card-img-top" alt="Wild Landscape"/> <!-- TODO: Que salgan 3 fotos por marco-->
+  </div>
+
+  <div class="card-body h-100">
+    <h5 class="card-title"><a class="me-auto" href="/lists/{{list.id}}">{{list.title}}</a></h5>
+    <i class="fa fa-user-circle mx-2" aria-hidden="true">{{list.owner.username}}</i>
+    <p class="card-text">
+      <small class="text-muted">Last updated 3 mins ago</small>
+      <button style="text-decoration: none" type="submit" class="raise"><a style="color:hsla(0,100%,50%,1)" class="fa fa-times me-auto ml-5" href="/lists/{{list.id}}/delete"></a></button>
+    </p>
+  </div>
+</div>
+{{/each}}

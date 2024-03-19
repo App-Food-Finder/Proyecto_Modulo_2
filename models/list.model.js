@@ -22,10 +22,6 @@ const listSchema = new Schema(
             required: [true, 'Title is required'],
             minLength: [5, 'Title must contain at least 5 characters']
         },
-        establishment: {
-            type: String,
-            required: [true, 'You must indicate an establishment']
-        },
         description: {
             type: String,
             maxLength: [140, 'Description can not contain more than 140 characters']
@@ -34,10 +30,6 @@ const listSchema = new Schema(
             type: mongoose.Types.ObjectId,
             ref:'User',
             required: true
-        },
-        city: {
-            type: String,
-            required: false
         }
     },
     { timestamps: true }
