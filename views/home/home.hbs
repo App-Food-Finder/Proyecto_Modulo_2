@@ -3,12 +3,13 @@
 
    <div width="100%">
         <div class="container mb-2">
-            <h1 color="special.white" data-test="homepage-tagline" class="css-prxf80 e15b0ofs1">Find some of the best restaurants and create lists with your recommendations</h1>
+            <h1 class="text-white text-center">Find some of the best restaurants and create lists with your recommendations</h1>
         </div>
-        <form class="search-button input-group rounded mt-2" action="/establishments">
-            <button class="raise" type="submit"><i class="fa fa-search"></i></button>
-            <input type="search" class="form-control rounded" placeholder="Tipo de cocina, nombre del restaurante..." aria-label="Search" aria-describedby="search-addon" />
-        </form>
+        <div class="box">
+                <form class="search" action="/establishments">
+                    <input placeholder="Search" type="text" class="input" name="txt" onmouseout="this.value = ''; this.blur();">
+                </form>
+        </div>
    </div>
-
 </div>
+

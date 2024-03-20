@@ -13,8 +13,10 @@
     <h5 class="card-title"><a class="me-auto" href="/lists/{{list.id}}">{{list.title}}</a></h5>
     <i class="fa fa-user-circle mx-2" aria-hidden="true">{{list.owner.username}}</i>
     <p class="card-text">
-      <small class="text-muted">Last updated 3 mins ago</small>
-      <button style="text-decoration: none" type="submit" class="raise"><a style="color:hsla(0,100%,50%,1)" class="fa fa-times me-auto ml-5" href="/lists/{{list.id}}/delete"></a></button>
+      {{!-- <small class="text-muted">Last updated 3 mins ago</small> --}}
+      <div class="mx-auto" style="width: 200px;">
+        <button type="submit" class="raise text-danger"><a style="color:hsla(0,100%,50%,1)" class="fa fa-times me-auto ml-5" href="/lists/{{list.id}}/delete"></a></button>
+      </div>
     </p>
   </div>
 </div>

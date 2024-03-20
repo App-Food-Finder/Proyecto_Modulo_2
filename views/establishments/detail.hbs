@@ -1,36 +1,52 @@
 
+<div class="card card-list mb-3 g-4">
+    <div class=""> {{!--hacer que al pasar el cursor se enfoque --}}
+        <img src="/establishment/toledo/2021-05-31.jpg" class="card-img-top" alt="Wild Landscape" />
+        <!-- TODO: Que salgan 3 fotos por marco-->
+    </div>
 
-<h1>{{establishment.name}}</h1>
+    <div class="container d-flex justify-content-center">
+        <h1 class="card-title mt-2 mx-3">{{establishment.name}}</h1>
+        <a class="fa fa-plus mx-3" href="/establishments/{{establishment.id}}/add-to-list"></a>
+    </div>
 
-<div>
-    <a class="fa fa-plus" href="/establishments/{{establishment.id}}/add-to-list"></a>
+    <div class="container d-flex justify-content-center">
+        <h5>{{establishment.description}}</h5>
+    </div>
+    <div class="mt-5 mx-5">
+        <p><i class="mx-2 fa fa-cutlery fa-fw"></i>{{establishment.foodType}}</p>
+        <p><i class="mx-2 fa fa-location-arrow fa-fw" aria-hidden="true"></i>{{establishment.location}}</p>
+        <p><i class="mx-2 fa fa-money fa-fw" aria-hidden="true"></i>{{establishment.price}} €</p>
+    </div>    
+
+    
 </div>
 
-<p>{{establishment.description}}</p>
-<p>{{establishment.foodType}}</p>
-<p>{{establishment.location}}</p>
-<p>{{establishment.price}}</p>
-
+<div class="mt-5" style="color: white">
+    <h3>Reviews</h3>
+</div>
 
 <form action="/establishments/{{establishment.id}}/comments" method="POST">
-    <div class="input-group">
+    <div class="input-group mt-3">
         <span class="input-group-text"><i class="fa fa-edit"></i></span>
         <textarea class="form-control {{#if errors.text}}is-invalid {{/if}}" name="text"></textarea>
-        <button class="btn btn-outline-secondary" type="submit" value="{{message.text}}"><i class="fa fa-send"></i></button>
+        <button class="btn btn-secondary" type="submit" value="{{message.text}}"><i class="fa fa-send fa-fw"></i></button>
         {{#if errors.text}} <div class="invalid-feedback">{{errors.text}}</div>{{/if}}
     </div>
 </form>
 
 <!-- INICIO - APARTADO COMENTARIOS: -->
-<div>
+<div class="card mt-2">
     {{#each establishment.comments as |comment|}}
-    <div>
-        <span class="me-auto">{{comment.owner.username}}</span>
+    <div class="mx-2">
+        <span class="mx-2 mt-2 fa fa-user-circle">{{comment.owner.username}}</span>
         <p>{{comment.text}}</p>
         {{#isOwnedBy comment ../currentUser}}
+        <div class="">
         <form action="/establishments/{{comment.establishment}}/comments/{{comment.id}}/delete" method="POST">
-            <button class="raise" type="submit">Delete</button>
+            <button class="raise" type="submit"><i class="fa fa-times text-danger" aria-hidden="true"></i></button>
         </form>
+        </div>
         {{/isOwnedBy}}
     </div>
     {{/each}}

@@ -1,7 +1,7 @@
-FEED ESTABLISHMENTS
+
 <div>
 
-     <button type="submit" class="raise"><a href="/create-establishment">Create establishment</a></button>
+     <button type="submit" class="raise text-black"><a href="/create-establishment">Create establishment</a></button>
 
 </div>
 
@@ -11,11 +11,12 @@ FEED ESTABLISHMENTS
         <div class="card h-100">
         <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-establishments"/>
         <div class="card-body">
-            <h5 class="card-title">{{establishment.name}}</h5>
-            <a class="me-auto" href="/establishments/{{establishment.id}}">Detail</a>
+            <h3 class="card-title">{{establishment.name}}</h3>
+
         </div>
-        <div class="card-footer">
-            <small class="text-muted">Last updated 3 mins ago</small> <!-- TODO: Formula fecha con Dayjs o Cloudinary -->
+        <div class="card-footer d-grid">
+            <!-- <small class="text-muted">Last updated 3 mins ago</small>  TODO: Formula fecha con Dayjs o Cloudinary -->
+            <button type="submit" class="raise btn btn-block"><a href="/establishments/{{establishment.id}}">Info</a></button>
         </div>
         </div>
     </div>
