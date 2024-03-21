@@ -29,7 +29,7 @@ router.get('/profile', secure.isAuthenticated, users.profile);
 router.get('/users/:id/edit', secure.isAuthenticated, users.edit);
 router.post('/users/:id/edit', secure.isAuthenticated, users.doEdit);
 
-// TODO outer.post('/users/:id/delete', secure.isAuthenticated, users.delete);
+router.post('/delete', secure.isAuthenticated, users.delete);
 
 //LISTS//
 router.get('/create-list', secure.isAuthenticated, lists.create);
