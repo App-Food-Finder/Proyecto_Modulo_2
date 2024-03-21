@@ -1,43 +1,46 @@
 <main>
+
 <div class="container-profile">
 
-<div class="row d-flex justify-content-center">
+<div class="row d-flex justify-content-start">
     <div class="left col-lg-4">
         <div class="photo-left">
             <img class="profile-photo" src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp">
+            <h4 class="name">{{currentUser.username}}</h4>
+                <p class="info">{{currentUser.email}}</p>
+            <div class="d-flex align-items-start justify-content">
+                <div class="stat col-xs-4" style="padding-right: 50px;">
+                    <p class="number-stat">0</p>
+                    <p class="desc-stat">Followers</p>
+                </div>
+                <div class="stat col-xs-4" style="padding-right: 50px;">
+                    <p class="number-stat">0</p>
+                    <p class="desc-stat">Following</p>
+                </div>
+                <div class="stat col-xs-4" style="padding-right: 50px;">
+                    <p class="number-stat">0</p>
+                    <p class="desc-stat">Lists</p>
+                </div>
+            </div>
         </div>
-        <h4 class="name">{{currentUser.username}}</h4>
-        <p class="info">{{currentUser.email}}</p>
-        <div class="d-flex align-items-start justify-content">
-            <div class="stat col-xs-4" style="padding-right: 50px;">
-                <p class="number-stat">0</p>
-                <p class="desc-stat">Followers</p>
-            </div>
-            <div class="stat col-xs-4" style="padding-right: 50px;">
-                <p class="number-stat">0</p>
-                <p class="desc-stat">Following</p>
-            </div>
-            <div class="stat col-xs-4" style="padding-right: 50px;">
-                <p class="number-stat">0</p>
-                <p class="desc-stat">Lists</p>
-            </div>
-        </div>
+        
     </div>
     <div class="stats row">
         <p class="description">{{currentUser.description}}</p>
     </div>
     <div>
-        <div class="left col-lg-4">
+        <div class="col-lg-4 justify-content-center">
         <h1>INFORMACIÓN PERSONAL</h1>
         
     </div>
     </div>
 
-    <button class="raise"><a href="/users/{{currentUser.id}}/edit">Edit</a></button>
-    
-    <!-- <form action="/profile/delete" method="POST">
-        <button class="raise" type="submit">Delete</button>
-    </form> -->
+    <button class="btn raise btn-outline-white mb-1"><a href="/users/{{currentUser.id}}/edit">Edit</a></button>
+
+    <form action="/delete" method="post" class="d-flex justify-content-end mt-2 mb-2">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit" class="btn raise btn-outline-danger mb-1">Delete</button>
+    </form>
 
     <!-- TODO: Pintar listas del usuario por su owner
         <div class="container">
@@ -50,5 +53,6 @@
             {{/each}}
         </div>
     TODO: Hacer cards de listas y que, al clicar en una, te lleve a los detalles-->
+
 </div>
-</main>
+</main> 

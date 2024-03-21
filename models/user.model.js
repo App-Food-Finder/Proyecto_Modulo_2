@@ -33,8 +33,10 @@ const userSchema = new Schema(
         description: {
             type: String,
             maxLength: [140, 'Description can not contain more than 140 characters']
+        },
+        photo: {
+            
         }
-        //keyFood:
     },
     { timestamps: true }
 );

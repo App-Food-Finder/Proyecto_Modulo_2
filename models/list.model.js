@@ -1,17 +1,3 @@
-/** 
-
-1 : N
-
-1 usuario -> (puede tener) -> n listas
-
-1 lista -> (puede pertenecer) -> 1 usuario
-
-1 lista -> (puede tener) -> n establecimientos
-
-1 establecimientos -> (puede pertenecer) -> n listas
-
-*/
-
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 

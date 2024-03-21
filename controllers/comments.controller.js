@@ -33,6 +33,7 @@ module.exports.doCreate = (req, res, next) => {
 
 module.exports.doDelete = (req, res, next) => {
   const {establishmentId, id } = req.params;
+  
   Establishment.findById(establishmentId)
     .then((establishment) => {
       if (!establishment) {

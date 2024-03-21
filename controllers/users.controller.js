@@ -78,13 +78,18 @@ module.exports.doEdit = (req, res, next) => {
         .catch(next);
 };
 
-/** TODO: module.exports.delete = (req, res, next) => {
-    User.findByIdAndDelete(req.user.id)
+
+module.exports.delete = (req, res, next) => {
+    const userId = req.user.id;
+
+    User.findById(userId)
         .then((user) => {
-            if (user) {
-                res.redirect('/');
-            } else {
+            if (!user) {
                 next(createError(404, 'User not found'));
+            } else {
+                return User.deleteOne({ _id: userId })
+                    .then(() => res.redirect('/signup'));
             }
-        }).catch(next);
-}; */
+        })
+};
+

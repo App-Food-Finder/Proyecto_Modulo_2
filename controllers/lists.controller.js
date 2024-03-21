@@ -90,7 +90,7 @@ module.exports.doEdit = (req, res, next) => {
 }
 
 module.exports.delete = (req, res, next) => {
-    const id = req.params.id
+    const id = req.params.id;
 
     List.findById(id)
         .then((lists) => {
@@ -99,7 +99,7 @@ module.exports.delete = (req, res, next) => {
             } else if (lists.owner != req.user.id) {
                 next(createError(403, '¡NO PUEDES PASAAAAR!'))
             } else {
-                return List.deleteOne( { _id: id} )
+                return List.deleteOne({ _id: id })
                     .then(() => res.redirect('/lists'));
             }
         })

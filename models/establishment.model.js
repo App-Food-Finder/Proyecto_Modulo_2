@@ -19,7 +19,8 @@ const establishmentSchema = new Schema(
         },
         location: {
             type: String,
-            required: [true, 'Location is required']
+            required: [true, 'Location is required'],
+            unique: false
         },
         price: {
             type: Number,

@@ -118,7 +118,7 @@ code {
 }
 
 .box:hover input {
-  width: 1310px;
+  width: 1300px;
   background: #3b3640;
   border-radius: 10px;
 }
@@ -128,7 +128,7 @@ code {
   top: 50%;
   right: 0px;
   transform: translate(-50%, -50%);
-  font-size: 26px;
+  font-size: 20px;
   color: #ffd52d;
   transition: .2s;
 }
