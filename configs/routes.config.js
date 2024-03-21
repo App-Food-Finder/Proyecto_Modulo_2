@@ -43,6 +43,7 @@ router.post('/lists/:id/edit', secure.isAuthenticated, lists.doEdit);
 
 router.get('/lists/:id/delete', secure.isAuthenticated, lists.delete);
 
+router.post('/lists/:listId/establishments/:establishmentId/delete', secure.isAuthenticated, lists.deleteFromList);
 
 //ESTABLISHMENTS//
 router.get('/establishments', secure.isAuthenticated, establishments.search);
@@ -56,7 +57,7 @@ router.post('/create-establishment', secure.isAuthenticated, establishments.doCr
 
 //COMMENTS
 router.post('/establishments/:establishmentId/comments', secure.isAuthenticated, comment.doCreate);
-router.post('/establishments/:establishmentId/comments/:id/delete', secure.isAuthenticated, comment.doDelete)
+router.post('/establishments/:establishmentId/comments/:id/delete', secure.isAuthenticated, comment.doDelete);
 
 
 module.exports = router;

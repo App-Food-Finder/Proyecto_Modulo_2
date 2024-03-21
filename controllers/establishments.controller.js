@@ -74,10 +74,17 @@ module.exports.doAddToList = (req, res, next) => {
         .catch(next)
 }
 
-
-
-
-/** TODO:
-    - favorite
-    - deleteFavorite
-*/
+module.exports.delete = (req, res, next) => {
+    const { id } = req.params;
+    return Establishment.findById(id)
+        .then((establishment) => {
+            if (!establishment) {
+                next(createError(404, 'Establishment not found'));
+            } else if (list.owner != req.user.id ) {
+                next(createError(403, 'No PUEDES PASAAAAAR!'));
+            } else {
+                return Establishment.deleteOne({ _id: id })
+                    .then(() => res.redirect(`/lists`));
+            }
+        }).catch(next);
+}

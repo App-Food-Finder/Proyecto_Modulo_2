@@ -1,6 +1,8 @@
 const createError = require('http-errors');
 const List = require('../models/list.model');
 const mongoose = require('mongoose');
+const Establishment = require('../models/establishment.model');
+const EstablishmentList = require('../models/establishment-list.model')
 
 module.exports.create = (req, res, next) => {
     res.render('lists/create');
@@ -89,6 +91,7 @@ module.exports.doEdit = (req, res, next) => {
         }));
 }
 
+
 module.exports.delete = (req, res, next) => {
     const id = req.params.id;
 
@@ -104,4 +107,18 @@ module.exports.delete = (req, res, next) => {
             }
         })
         .catch(next);
+}
+
+module.exports.deleteFromList = (req, res, next) => {
+    const { establishmentId, listId } = req.params;
+
+    EstablishmentList.findOne({establishment: establishmentId, list: listId})
+        .then((establishmentList) => {
+            if (!establishmentList) {
+                next(createError(404));
+            } else {
+                return EstablishmentList.deleteOne({_id: establishmentList._id})
+                    .then(() => res.redirect(`/lists/${listId}`));
+            }
+        }).catch(next);
 }

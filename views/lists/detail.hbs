@@ -7,8 +7,6 @@
         <h1>{{lists.title}}</h1>
         <h4>Description: {{lists.description}}</h4>
         <!--TODO: <h3>Owner: {{list.owner.username}}</h3>-->
-        
-
 </div>
 
 <table class="table align-middle me-auto bg-white">
@@ -32,7 +30,7 @@
               class="rounded-circle"
               />
           <div class="ms-3">
-            <p class="fw-bold mb-1"><a class="me-auto" href="/establishments/{{establishment.id}}">{{added.establishment.name}}</a></p>
+            <p class="fw-bold mb-1"><a class="me-auto" href="/establishments/{{added.establishment.id}}">{{added.establishment.name}}</a></p>
           </div>
         </div>
       </td>
@@ -47,9 +45,10 @@
       </td>
       <td>
         <div class="me-auto d-inline-block">
-          <button type="submit" class="raise text-danger">Remove</button>
+          <form action="/lists/{{added.list}}/establishments/{{added.establishment.id}}/delete" method="POST">
+            <button type="submit" class="raise text-danger">Remove</button>
+          </form>
         </div>
-
       </td>
     </tr>
   </tbody>
