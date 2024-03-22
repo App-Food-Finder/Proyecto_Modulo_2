@@ -17,7 +17,11 @@ const commentSchema = new Schema(
             type: mongoose.Types.ObjectId,
             ref: 'Establishment',
             required: true
-        }
+        }/**,
+        pictures: {
+            type: String,
+
+        }*/
     },
     { timestamps: true }
 );
