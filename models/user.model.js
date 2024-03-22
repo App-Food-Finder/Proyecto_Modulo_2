@@ -16,6 +16,7 @@ const userSchema = new Schema(
         email: {
             type: String,
             required: [true, 'Email is required'],
+            lowercase: true,
             unique: true,
             trim: true
         },
@@ -28,13 +29,14 @@ const userSchema = new Schema(
             type: Number,
             required: [true, 'Phone number is required'],
             unique: true,
-            minLength: [9, 'Number must have at least 9 characters']
+            minLength: [9, 'Phone number must have at least 9 characters']
         },
         description: {
             type: String,
             maxLength: [140, 'Description can not contain more than 140 characters']
         },
-        photo: String
+        photo: String,
+        //default:
     },
     { timestamps: true }
 );

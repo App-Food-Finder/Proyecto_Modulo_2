@@ -2,12 +2,11 @@
 
     <div class="card row d-flex flex-wrap justify-content-start">
         <div class="left col-lg-4">
-            <div class="photo-left">
-                <img class="profile-photo" src={{currentUser.photo}}>
-
+            <div class="photo-start">
+                <img class="photo" src={{currentUser.photo}}>
                 <h4 class="name">{{currentUser.username}}</h4>
                     <p class="info">{{currentUser.email}}</p>
-                <div class="d-flex align-items-start justify-content">
+                <div class="d-flex align-items-start justify-content-center">
                     <div class="stat col-xs-4" style="padding-right: 50px;">
                         <p class="number-stat">0</p>
                         <p class="desc-stat">Followers</p>
@@ -27,8 +26,8 @@
         <div class="stats row">
             <p class="description">{{currentUser.description}}</p>
         </div>
-        <div>
-            <h1>INFORMACIÓN PERSONAL</h1>
+        <div class="card">
+            <h4 class="description">{{currentUser.description}}</h4>
         </div>
         <div>
             <button class="d-flex justify-content-start mt-2 btn raise btn-outline-primary"><a href="/users/{{currentUser.id}}/edit">Edit</a></button>
@@ -48,9 +47,7 @@
                     </li>
                 {{/each}}
             </div>
-        TODO: Hacer cards de listas y que, al clicar en una, te lleve a los detalles-->
+        TODO: Hacer cards de listas y que, al clicar en una, te lleve a los detalles -->
 
     </div>
 </main> 
-
-

@@ -29,7 +29,6 @@ module.exports.loadUser = (req, res, next) => {
             .then((user) => {
                 req.user = user;
                 res.locals.currentUser = user;
-                /**res.locals.admin = req.user?.isAdmin;*/
                 next();
             })
             .catch(next);

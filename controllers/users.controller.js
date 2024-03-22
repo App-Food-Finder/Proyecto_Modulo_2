@@ -60,10 +60,10 @@ module.exports.profile = (req, res, next) => {
 
 
 module.exports.logout = (req, res, next) => {
-    req.session.destroy()
-    req.session = null
-    res.clearCookie('connect.sid')
-    res.redirect('/login')
+    req.session.destroy();
+    req.session = null;
+    res.clearCookie('connect.sid');
+    res.redirect('/login');
 };
 
 module.exports.edit = (req, res, next) => {
