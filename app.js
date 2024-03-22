@@ -10,6 +10,7 @@ const app = express();
 
 require('./configs/db.config');
 require('./configs/hbs.config')
+//require('./configs/multer.config')
 
 app.set('view engine', 'hbs');
 app.set('views', `${__dirname}/views`);

@@ -26,6 +26,7 @@ module.exports.doCreate = (req, res, next) => {
         });
 }
 
+/** FIX: En el desplegable se muestras las listas de todos los usuarios */
 module.exports.viewLists = (req, res, next) => {
     List.find()
         .populate({
@@ -91,7 +92,6 @@ module.exports.doEdit = (req, res, next) => {
         }));
 }
 
-
 module.exports.delete = (req, res, next) => {
     const id = req.params.id;
 
@@ -109,15 +109,18 @@ module.exports.delete = (req, res, next) => {
         .catch(next);
 }
 
+/** FIX: Cualquier usuario puede borrar establecimientos de las listas */
 module.exports.deleteFromList = (req, res, next) => {
     const { establishmentId, listId } = req.params;
 
-    EstablishmentList.findOne({establishment: establishmentId, list: listId})
+    EstablishmentList.findOne({ establishment: establishmentId, list: listId })
         .then((establishmentList) => {
             if (!establishmentList) {
                 next(createError(404));
-            } else {
-                return EstablishmentList.deleteOne({_id: establishmentList._id})
+            } /*else if (list.owner != req.user.id) {
+                next(createError(403, '¡NO PUEDES PASAAAAAR!'))
+            } */ else {
+                return EstablishmentList.deleteOne({ _id: establishmentList._id })
                     .then(() => res.redirect(`/lists/${listId}`));
             }
         }).catch(next);

@@ -1,29 +1,36 @@
-<form action="/users/{{user.id}}/edit" method="POST">
+<div>
+    <form action="/users/{{user.id}}/edit" method="POST" enctype="multipart/form-data">
 
-    <div class="form-group mt-5">
-        <label>Username</label>
-        <input name="username" type="username" value="{{user.username}}" class="form-control {{#if errors.username}}is-invalid{{/if}}">
-        {{#if errors.username}} <div class="invalid-feedback">{{errors.username}}</div>{{/if}}
-    </div>
-    <div class="form-group mt-5">
-        <label>Full name</label>
-        <input name="name" type="name" value="{{user.name}}" class="form-control {{#if errors.name}}is-invalid{{/if}}">
-        {{#if errors.name}} <div class="invalid-feedback">{{errors.name}}</div>{{/if}}
-    </div>
+        <div class="form-group mt-5">
+            <label>Username</label>
+            <input name="username" type="username" value="{{user.username}}" class="form-control {{#if errors.username}}is-invalid{{/if}}">
+            {{#if errors.username}} <div class="invalid-feedback">{{errors.username}}</div>{{/if}}
+        </div>
+        <div class="form-group mt-5">
+            <label>Full name</label>
+            <input name="name" type="name" value="{{user.name}}" class="form-control {{#if errors.name}}is-invalid{{/if}}">
+            {{#if errors.name}} <div class="invalid-feedback">{{errors.name}}</div>{{/if}}
+        </div>
 
-    <div class="form-group mt-5">
-        <label>Email</label>
-        <input name="email" type="email" value="{{user.email}}" class="form-control {{#if errors.email}}is-invalid{{/if}}">
-        {{#if errors.email}} <div class="invalid-feedback">{{errors.email}}</div>{{/if}}
-    </div>
+        <div class="form-group mt-5">
+            <label>Email</label>
+            <input name="email" type="email" value="{{user.email}}" class="form-control {{#if errors.email}}is-invalid{{/if}}">
+            {{#if errors.email}} <div class="invalid-feedback">{{errors.email}}</div>{{/if}}
+        </div>
 
-                    
-    <div class="form-group mt-5">
-        <label>Phone number</label>
-        <input name="phone" type="phone" value="{{user.phone}}" class="form-control {{#if errors.phone}}is-invalid{{/if}}">
-        {{#if errors.phone}} <div class="invalid-feedback">{{errors.phone}}</div>{{/if}}
-    </div>
+                        
+        <div class="form-group mt-5">
+            <label>Phone number</label>
+            <input name="phone" type="phone" value="{{user.phone}}" class="form-control {{#if errors.phone}}is-invalid{{/if}}">
+            {{#if errors.phone}} <div class="invalid-feedback">{{errors.phone}}</div>{{/if}}
+        </div>
 
-     <button type="submit" class="raise">Confirm</button>
-     
-</form>
+        <div>
+            <input type="file" name="profile" id="filename" />
+            <input type="submit">
+        </div>
+
+        <button type="submit" class="raise text-black">Confirm changes</button>
+        
+    </form>
+</div>

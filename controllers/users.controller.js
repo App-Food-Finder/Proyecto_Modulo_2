@@ -10,10 +10,10 @@ module.exports.create = (req, res, next) => {
 module.exports.doCreate = (req, res, next) => {
     const user = req.body;
 
-    User.findOne({username: user.username})
+    User.findOne({ username: user.username })
         .then((userFound) => {
             if (userFound) {
-                res.status(409).render('users/signup', { userFound, errors: { username: 'Already exists' }});
+                res.status(409).render('users/signup', { userFound, errors: { username: 'Already exists' } });
             } else {
                 return User.create(user)
                     .then(() => res.redirect('/login'))
@@ -42,11 +42,11 @@ module.exports.doLogin = (req, res, next) => {
                             req.session.userId = userFound.id;
                             res.redirect('/profile');
                         } else {
-                            res.status(401).render('users/login', { userFound: req.body, errors: { password: 'Invalid username or password'} });
+                            res.status(401).render('users/login', { userFound: req.body, errors: { password: 'Invalid username or password' } });
                         }
                     })
             } else {
-                res.status(401).render('users/login', { userFound: req.body, errors: { password: 'Invalid username or password'} });
+                res.status(401).render('users/login', { userFound: req.body, errors: { password: 'Invalid username or password' } });
             }
         })
         .catch(next);
@@ -54,8 +54,8 @@ module.exports.doLogin = (req, res, next) => {
 
 module.exports.profile = (req, res, next) => {
     List.find()
-    .then((lists) => res.render('users/profile', { lists }))
-    .catch(next);
+        .then((lists) => res.render('users/profile', { lists }))
+        .catch(next);
 };
 
 
@@ -72,7 +72,27 @@ module.exports.edit = (req, res, next) => {
 
 
 module.exports.doEdit = (req, res, next) => {
-    Object.assign(req.user, req.body)
+
+    const {
+        username,
+        name,
+        email,
+        phone,
+        description
+    } = req.body;
+    
+    const body = {
+        username,
+        name,
+        email,
+        phone,
+        description
+    }
+    if (req.file) {
+        body.photo = req.file.path
+    }
+
+    Object.assign(req.user, body)
         .save()
         .then(() => res.redirect('/profile'))
         .catch(next);
@@ -92,4 +112,3 @@ module.exports.delete = (req, res, next) => {
             }
         })
 };
-

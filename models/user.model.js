@@ -34,13 +34,16 @@ const userSchema = new Schema(
             type: String,
             maxLength: [140, 'Description can not contain more than 140 characters']
         },
-        photo: {
-            
-        }
+        photo: String
     },
     { timestamps: true }
 );
 
+userSchema.virtual('userLists', {
+    ref: 'UserLists',
+    localField: '_id',
+    foreignField: 'user'
+})
 
 userSchema.pre('save', function (next) {
     if (this.isModified('password')) {

@@ -22,17 +22,18 @@ module.exports.session = expressSession({
 
 
 module.exports.loadUser = (req, res, next) => {
-    const userId = req.session.userId
+    const userId = req.session.userId;
 
     if (userId) {
         User.findById(userId)
             .then((user) => {
-                req.user = user
-                res.locals.currentUser = user
+                req.user = user;
+                res.locals.currentUser = user;
+                /**res.locals.admin = req.user?.isAdmin;*/
                 next();
             })
             .catch(next);
     } else {
         next();
     }
-}
+};

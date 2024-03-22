@@ -5,6 +5,7 @@ const lists = require('../controllers/lists.controller');
 const establishments = require('../controllers/establishments.controller');
 const comment = require('../controllers/comments.controller');
 const secure = require('../middlewares/auth.middleware');
+const parser = require('../configs/multer.config');
 const router = express.Router();
 
 //USERS//
@@ -27,7 +28,7 @@ router.get('/logout', users.logout);
 router.get('/profile', secure.isAuthenticated, users.profile);
 
 router.get('/users/:id/edit', secure.isAuthenticated, users.edit);
-router.post('/users/:id/edit', secure.isAuthenticated, users.doEdit);
+router.post('/users/:id/edit', secure.isAuthenticated, parser.single('profile'), users.doEdit);
 
 router.post('/delete', secure.isAuthenticated, users.delete);
 
@@ -58,6 +59,5 @@ router.post('/create-establishment', secure.isAuthenticated, establishments.doCr
 //COMMENTS
 router.post('/establishments/:establishmentId/comments', secure.isAuthenticated, comment.doCreate);
 router.post('/establishments/:establishmentId/comments/:id/delete', secure.isAuthenticated, comment.doDelete);
-
 
 module.exports = router;

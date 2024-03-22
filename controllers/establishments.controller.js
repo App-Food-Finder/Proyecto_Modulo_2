@@ -63,6 +63,7 @@ module.exports.addToList = (req, res, next) => {
     
 }
 
+/** FIX: Cualquier usuario puede añadir establecimientos a las listas de otros usuarios */
 module.exports.doAddToList = (req, res, next) => {
     EstablishmentList.create({
         list: req.body.list,
@@ -74,6 +75,7 @@ module.exports.doAddToList = (req, res, next) => {
         .catch(next)
 }
 
+/**
 module.exports.delete = (req, res, next) => {
     const { id } = req.params;
     return Establishment.findById(id)
@@ -88,3 +90,4 @@ module.exports.delete = (req, res, next) => {
             }
         }).catch(next);
 }
+*/

@@ -1,12 +1,16 @@
+<!-- FIX: Se muestras las listas de todos los usuarios -->
+
 <div>
   <button type="submit" class="raise"><a class="me-auto" href="/create-list">Create list</a></button>
 </div>
+
+
 
 {{#each lists as |list|}}
 <div class="card card-list mb-3 g-4">
 
   <div class="">   {{!--hacer que al pasar el cursor se enfoque --}}
-      <img src="/establishment/toledo/2021-05-31.jpg" class="card-img-top" alt="Wild Landscape"/> <!-- TODO: Que salgan 3 fotos por marco-->
+     <img src="/establishment/toledo/2021-05-31.jpg" class="card-img-top" alt="Wild Landscape"/>   {{!--TODO: Que salgan 3 fotos por marco --}}
   </div>
 
   <div class="container px-4 text-center">
@@ -30,7 +34,6 @@
         </div>
         
       </div>
-
     </div>
   </div>
 </div>
