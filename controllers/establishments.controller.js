@@ -37,9 +37,27 @@ module.exports.detail = (req, res, next) => {
 };
 
 module.exports.doCreate = (req, res, next) => {
-    const establishment = req.body;
+    const {
+        name,
+        description,
+        foodType,
+        location,
+        price
+    } = req.body;
+    
+    const body = {
+        name,
+        description,
+        foodType,
+        location,
+        price
+    }
 
-    Establishment.create(establishment)
+    if (req.file) {
+        body.pictures = req.file.path
+    }
+
+    Establishment.create(body)
         .then((establishment) => res.redirect('/establishments'))
         .catch((error) => {
             if (error instanceof mongoose.Error.ValidationError) {

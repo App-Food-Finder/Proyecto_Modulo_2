@@ -12,7 +12,10 @@ const establishmentSchema = new Schema(
             required: true,
             maxLength: 240
         },
-        //photo:
+        pictures:{
+            type: [String],
+            default: 'https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp'
+        },
         foodType: {
             type: [String],
             required: [true, 'Please, indicate at least one food type']

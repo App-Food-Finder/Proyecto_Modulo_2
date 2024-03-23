@@ -33,6 +33,10 @@ code {
 
 /** FIN - RISE */
 
+.background-final {
+  background: linear-gradient(to bottom, #190120, #200b2c, #2a1039, #341547, #3f1a55, #451b61, #4b1c6d, #511d79, #531a86, #541793, #5413a1, #530faf);
+}
+
 /** INICIO - CSS PROFILE */
 
 .container-profile {
@@ -140,3 +144,38 @@ code {
 
 /** */
 
+.add-button {
+  color: white;
+  background: white;
+  box-shadow: 10px 5px 5px gray;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+.add-button:hover {
+  background-color: #ffffff;
+}
+
+
+.img-hover-zoom--blur img {
+  transition: transform 1s, filter 2s ease-in-out;
+  filter: blur(2px);
+  transform: scale(1.2);
+}
+
+/* The Transformation */
+.img-hover-zoom--blur:hover img {
+  filter: blur(0);
+  transform: scale(1);
+}
+
+.img-hover-zoom {
+  background: #222f3e;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 0.5em;
+  border: 5px solid rgba(255, 255, 255, .05);
+}

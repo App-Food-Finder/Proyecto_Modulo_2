@@ -1,4 +1,4 @@
-<!-- FIX: Se muestras las listas de todos los usuarios -->
+<!-- FIX: Se muestran las listas de todos los usuarios -->
 
 <form method="POST" action="/establishments/{{establishmentId}}/add-to-list">
     <select name="list">
@@ -7,5 +7,5 @@
         {{/each}}
     </select>
 
-    <button class="raise text-black" type="submit">Add</button>
+    <button name="add-button" class="raise text-black" type="submit">Add</button>
 </form>

@@ -35,8 +35,10 @@ const userSchema = new Schema(
             type: String,
             maxLength: [140, 'Description can not contain more than 140 characters']
         },
-        photo: String,
-        //default:
+        photo: {
+            type: String,
+            default: 'https://us.123rf.com/450wm/thesomeday123/thesomeday1231712/thesomeday123171200009/91087331-icono-de-perfil-de-avatar-predeterminado-para-hombre-marcador-de-posici%C3%B3n-de-foto-gris-vector-de.jpg'
+        }
     },
     { timestamps: true }
 );

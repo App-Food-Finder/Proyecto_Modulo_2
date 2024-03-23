@@ -1,28 +1,30 @@
-<form action="/create-list" method="POST">
+<div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-12 col-md-8 col-lg-6 col-xl-5 text-white">
+        <form action="/create-list" method="POST">
 
-    <div class="container">
-        <div class="input-group mb-3">
-            <span class="input-group-text"><i class="fa fa-tag fa-fw"></i></span>
-            <input type="text" name="title" value="{{list.title}}"class="form-control {{#if errors.title}}is-invalid {{/if}}" placeholder="Title">
-            {{#if errors.title}}<div class="invalid-feedback">{{errors.title}}</div>{{/if}}
-        </div>
+            <div class="container">
+                <div class="input-group mt-5">
+                    <span class="input-group-text"><i class="fa fa-tag fa-fw"></i></span>
+                    <input type="text" name="title" value="{{list.title}}"class="form-control {{#if errors.title}}is-invalid {{/if}}" placeholder="Title">
+                    {{#if errors.title}}<div class="invalid-feedback">{{errors.title}}</div>{{/if}}
+                </div>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text"><i class="fa fa-commenting fa-fw"></i></span>
-            <input type="text" name="description" value="{{list.description}}"class="form-control {{#if errors.description}}is-invalid {{/if}}" placeholder="Description">
-            {{#if errors.description}}<div class="invalid-feedback">{{errors.description}}</div>{{/if}}
-        </div>
-        
-        <div class="input-group mb-3">
-            <span class="input-group-text"><i class="fa fa-building fa-fw" aria-hidden="true"></i></span>
-            <input type="text" name="city" value="{{list.city}}"class="form-control {{#if errors.city}}is-invalid {{/if}}" placeholder="City">
-            {{#if errors.city}}<div class="invalid-feedback">{{errors.city}}</div>{{/if}}
-        </div>
+                <div class="input-group mt-5">
+                    <span class="input-group-text"><i class="fa fa-commenting fa-fw"></i></span>
+                    <input type="text" name="description" value="{{list.description}}"class="form-control {{#if errors.description}}is-invalid {{/if}}" placeholder="Description">
+                    {{#if errors.description}}<div class="invalid-feedback">{{errors.description}}</div>{{/if}}
+                </div>
+                
+                <div class="input-group mt-5">
+                    <span class="input-group-text"><i class="fa fa-building fa-fw" aria-hidden="true"></i></span>
+                    <input type="text" name="city" value="{{list.city}}"class="form-control {{#if errors.city}}is-invalid {{/if}}" placeholder="City">
+                    {{#if errors.city}}<div class="invalid-feedback">{{errors.city}}</div>{{/if}}
+                </div>
 
-        <div class="form-actions">
-            <button type="submit" class="raise text-black">Create list</button>
-        </div>
+                <div class="form-actions text-center mt-5">
+                    <button type="submit" class="raise text-black">Create list</button>
+                </div>
+            </div>
+        </form>
     </div>
-    
-    
-</form>
+</div>

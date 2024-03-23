@@ -1,36 +1,61 @@
-<div>
+<div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-12 col-md-8 col-lg-6 col-xl-5 text-white">
     <form action="/users/{{user.id}}/edit" method="POST" enctype="multipart/form-data">
 
         <div class="form-group mt-5">
-            <label>Username</label>
-            <input name="username" type="username" value="{{user.username}}" class="form-control {{#if errors.username}}is-invalid{{/if}}">
+            <div class="text-center">
+                <label>Username</label>
+            </div>
+            <input name="username" type="username" value="{{user.username}}" class="form-control mt-2 {{#if errors.username}}is-invalid{{/if}}">
             {{#if errors.username}} <div class="invalid-feedback">{{errors.username}}</div>{{/if}}
         </div>
         <div class="form-group mt-5">
-            <label>Full name</label>
-            <input name="name" type="name" value="{{user.name}}" class="form-control {{#if errors.name}}is-invalid{{/if}}">
+            <div class="text-center">
+                <label>Full name</label>
+            </div>
+            <input name="name" type="name" value="{{user.name}}" class="form-control mt-2 {{#if errors.name}}is-invalid{{/if}}">
             {{#if errors.name}} <div class="invalid-feedback">{{errors.name}}</div>{{/if}}
         </div>
 
         <div class="form-group mt-5">
-            <label>Email</label>
-            <input name="email" type="email" value="{{user.email}}" class="form-control {{#if errors.email}}is-invalid{{/if}}">
+            <div class="text-center">
+                <label>Email</label>
+            </div>
+            <input name="email" type="email" value="{{user.email}}" class="form-control mt-2 {{#if errors.email}}is-invalid{{/if}}">
             {{#if errors.email}} <div class="invalid-feedback">{{errors.email}}</div>{{/if}}
         </div>
 
                         
         <div class="form-group mt-5">
-            <label>Phone number</label>
-            <input name="phone" type="phone" value="{{user.phone}}" class="form-control {{#if errors.phone}}is-invalid{{/if}}">
+            <div class="text-center">
+                <label>Phone number</label>
+            </div>
+            <input name="phone" type="phone" value="{{user.phone}}" class="form-control mt-2 {{#if errors.phone}}is-invalid{{/if}}">
             {{#if errors.phone}} <div class="invalid-feedback">{{errors.phone}}</div>{{/if}}
         </div>
 
-        <div>
-            <input type="file" name="profile" id="filename" />
-            <input type="submit">
+        <div class="form-group mt-5">
+            <div class="text-center">
+                <label>Description</label>
+            </div>
+            <input name="description" type="description" value="{{user.description}}" class="form-control mt-2 {{#if errors.description}}is-invalid{{/if}}">
+            {{#if errors.description}} <div class="invalid-feedback">{{errors.description}}</div>{{/if}}
         </div>
 
-        <button type="submit" class="raise text-black">Confirm changes</button>
+        <div class="form-group mt-5">
+            <div class="text-center">
+                <label>Choose your profile photo</label>
+            </div>
+            <input type="file" name="profile" id="filename" value="{{user.photo}}" class="form-control mt-2" />
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="raise text-black mt-5">Confirm changes</button>
+        </div>
+
         
     </form>
+</div>
+
+
 </div>

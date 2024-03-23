@@ -1,22 +1,22 @@
 
 <div>
 
-     <button type="submit" class="raise text-black"><a href="/create-establishment">Create establishment</a></button>
+     <button type="submit" class="raise text-black mb-3"><a href="/create-establishment">Create establishment</a></button>
 
 </div>
 
-<div class="row row-cols-1 row-cols-md-3 g-4 d-flex flex-wrap">
+<div class="row row-cols-1 row-cols-md-3 g-4 d-flex flex-wrap shadow-5-strong">
     {{#each establishments as |establishment|}}
-    <div class="col">
-        <div class="card h-100">
-        <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-establishments"/>
+    <div class="col establishments-card-background img-hover-zoom--blur overflow-hidden">
+        <div class="card establishments-card h-100">
+        <img src="{{establishment.pictures}}" class="card-img-establishments"/>
         <div class="card-body">
             <h3 class="card-title">{{establishment.name}}</h3>
 
         </div>
         <div class="card-footer d-grid">
             <!-- <small class="text-muted">Last updated 3 mins ago</small>  TODO: Formula fecha con Dayjs o Cloudinary -->
-            <button type="submit" class="raise btn btn-block"><a href="/establishments/{{establishment.id}}">Info</a></button>
+            <button name="info-button" type="submit" class="raise btn btn-block"><a href="/establishments/{{establishment.id}}">Info</a></button>
         </div>
         </div>
     </div>

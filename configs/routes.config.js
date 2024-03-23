@@ -54,7 +54,7 @@ router.get('/establishments/:id/add-to-list', secure.isAuthenticated, establishm
 router.post('/establishments/:id/add-to-list', secure.isAuthenticated, establishments.doAddToList);
 
 router.get('/create-establishment', secure.isAuthenticated, establishments.create);
-router.post('/create-establishment', secure.isAuthenticated, establishments.doCreate);
+router.post('/create-establishment', secure.isAuthenticated, parser.single('establishment-photo'), establishments.doCreate);
 
 //COMMENTS
 router.post('/establishments/:establishmentId/comments', secure.isAuthenticated, comment.doCreate);

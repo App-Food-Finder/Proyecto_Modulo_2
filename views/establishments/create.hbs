@@ -1,40 +1,55 @@
+<div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col-12 col-md-8 col-lg-6 col-xl-5 text-white">
+        <form action="/create-establishment" method="POST" enctype="multipart/form-data">
+            <div class="container mt-5">
+                <div class="input-group mt-5">
+                    <span class="input-group-text"><i class="fa fa-home fa-fw"></i></span>
+                    <input type="text" name="name" value="{{establishment.name}}"
+                        class="form-control {{#if errors.name}}is-invalid {{/if}}" placeholder="Name">
+                    {{#if errors.name}}<div class="invalid-feedback">{{errors.name}}</div>{{/if}}
+                </div>
 
-<form action="/create-establishment" method="POST">
+                <div class="input-group mt-5">
+                    <span class="input-group-text"><i class="fa fa-commenting fa-fw"></i></span>
+                    <input type="text" name="description" value="{{establishment.description}}"
+                        class="form-control {{#if errors.description}}is-invalid {{/if}}" placeholder="Description">
+                    {{#if errors.description}}<div class="invalid-feedback">{{errors.description}}</div>{{/if}}
+                </div>
 
-    <div class="container">
-        <div class="input-group mb-3">
-            <span class="input-group-text"><i class="fa fa-home fa-fw"></i></span>
-            <input type="text" name="name" value="{{establishment.name}}"class="form-control {{#if errors.name}}is-invalid {{/if}}" placeholder="Name">
-            {{#if errors.name}}<div class="invalid-feedback">{{errors.name}}</div>{{/if}}
-        </div>
+                <div class="input-group mt-5">
+                    <span class="input-group-text"><i class="fa fa-cutlery fa-fw"></i></span>
+                    <input type="text" name="foodType" value="{{establishment.foodType}}"
+                        class="form-control {{#if errors.foodType}}is-invalid {{/if}}" placeholder="Food type">
+                    {{#if errors.foodType}}<div class="invalid-feedback">{{errors.foodType}}</div>{{/if}}
+                </div>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text"><i class="fa fa-commenting fa-fw"></i></span>
-            <input type="text" name="description" value="{{establishment.description}}"class="form-control {{#if errors.description}}is-invalid {{/if}}" placeholder="Description">
-            {{#if errors.description}}<div class="invalid-feedback">{{errors.description}}</div>{{/if}}
-        </div>
+                <div class="input-group mt-5">
+                    <span class="input-group-text"><i class="fa fa-location-arrow fa-fw" aria-hidden="true"></i></span>
+                    <input type="text" name="location" value="{{establishment.location}}"
+                        class="form-control {{#if establishment.location}}is-invalid {{/if}}" placeholder="Location">
+                    {{#if errors.location}}<div class="invalid-feedback">{{errors.location}}</div>{{/if}}
+                </div>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text"><i class="fa fa-cutlery fa-fw"></i></span>
-            <input type="text" name="foodType" value="{{establishment.foodType}}"class="form-control {{#if errors.foodType}}is-invalid {{/if}}" placeholder="Food type">
-            {{#if errors.foodType}}<div class="invalid-feedback">{{errors.foodType}}</div>{{/if}}
-        </div>
-        
-        <div class="input-group mb-3">
-            <span class="input-group-text"><i class="fa fa-location-arrow fa-fw" aria-hidden="true"></i></span>
-            <input type="text" name="location" value="{{establishment.location}}"class="form-control {{#if establishment.location}}is-invalid {{/if}}" placeholder="Location">
-            {{#if errors.location}}<div class="invalid-feedback">{{errors.location}}</div>{{/if}}
-        </div>
+                <div class="input-group mt-5">
+                    <span class="input-group-text"><i class="fa fa-money fa-fw" aria-hidden="true"></i></span>
+                    <input type="text" name="price" value="{{establishment.price}}"
+                        class="form-control {{#if establishment.price}}is-invalid {{/if}}" placeholder="Price">
+                    {{#if errors.price}}<div class="invalid-feedback">{{errors.price}}</div>{{/if}}
+                </div>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text"><i class="fa fa-money fa-fw" aria-hidden="true"></i></span>
-            <input type="text" name="price" value="{{establishment.price}}"class="form-control {{#if establishment.price}}is-invalid {{/if}}" placeholder="Price">
-            {{#if errors.price}}<div class="invalid-feedback">{{errors.price}}</div>{{/if}}
-        </div>
-
-        <div class="form-actions">
-            <button type="submit" class="raise text-black">Create establishment</button>
-        </div>
-    </div>
+                <div class="form-group mt-5">
+                    <div class="text-center">
+                        <label>Choose your photos</label>
+                    </div>
+                    <input type="file" name="establishment-photo" id="filename" value="{{establishment.pictures}}"
+                        class="form-control mt-2" />
+                </div>
     
-</form>
+                <div class="form-actions mt-5 text-center">
+                    <button type="submit" class="raise text-black">Create establishment</button>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>
