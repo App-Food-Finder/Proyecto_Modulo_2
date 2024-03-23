@@ -159,9 +159,8 @@ code {
   background-color: #ffffff;
 }
 
-
 .img-hover-zoom--blur img {
-  transition: transform 1s, filter 2s ease-in-out;
+  transition: transform 0.5s, filter 1s ease-in-out;
   filter: blur(2px);
   transform: scale(1.2);
 }

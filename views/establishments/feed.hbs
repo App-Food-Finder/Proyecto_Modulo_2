@@ -1,14 +1,12 @@
 
 <div>
-
-     <button type="submit" class="raise text-black mb-3"><a href="/create-establishment">Create establishment</a></button>
-
+     <button type="submit" class="raise mb-3 bg-transparent outline-transparent"><a href="/create-establishment">Create establishment</a></button>
 </div>
 
 <div class="row row-cols-1 row-cols-md-3 g-4 d-flex flex-wrap shadow-5-strong">
     {{#each establishments as |establishment|}}
-    <div class="col establishments-card-background img-hover-zoom--blur overflow-hidden">
-        <div class="card establishments-card h-100">
+    <div class="col establishments-card-background <!--img-hover-zoom--blur overflow-hidden w-full--m-->">
+        <div class="card establishments-card h-100"> <!-- bg-transparent hace transparente la card -->
         <img src="{{establishment.pictures}}" class="card-img-establishments"/>
         <div class="card-body">
             <h3 class="card-title">{{establishment.name}}</h3>
