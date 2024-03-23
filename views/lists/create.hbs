@@ -1,24 +1,35 @@
 <div class="row d-flex justify-content-center align-items-center h-100">
     <div class="col-12 col-md-8 col-lg-6 col-xl-5 text-white">
-        <form action="/create-list" method="POST">
+        <form action="/create-list" method="POST" enctype="multipart/form-data">
 
             <div class="container">
                 <div class="input-group mt-5">
                     <span class="input-group-text"><i class="fa fa-tag fa-fw"></i></span>
-                    <input type="text" name="title" value="{{list.title}}"class="form-control {{#if errors.title}}is-invalid {{/if}}" placeholder="Title">
+                    <input type="text" name="title" value="{{list.title}}"
+                        class="form-control {{#if errors.title}}is-invalid {{/if}}" placeholder="Title">
                     {{#if errors.title}}<div class="invalid-feedback">{{errors.title}}</div>{{/if}}
                 </div>
 
                 <div class="input-group mt-5">
                     <span class="input-group-text"><i class="fa fa-commenting fa-fw"></i></span>
-                    <input type="text" name="description" value="{{list.description}}"class="form-control {{#if errors.description}}is-invalid {{/if}}" placeholder="Description">
+                    <input type="text" name="description" value="{{list.description}}"
+                        class="form-control {{#if errors.description}}is-invalid {{/if}}" placeholder="Description">
                     {{#if errors.description}}<div class="invalid-feedback">{{errors.description}}</div>{{/if}}
                 </div>
-                
+
                 <div class="input-group mt-5">
                     <span class="input-group-text"><i class="fa fa-building fa-fw" aria-hidden="true"></i></span>
-                    <input type="text" name="city" value="{{list.city}}"class="form-control {{#if errors.city}}is-invalid {{/if}}" placeholder="City">
+                    <input type="text" name="city" value="{{list.city}}"
+                        class="form-control {{#if errors.city}}is-invalid {{/if}}" placeholder="City">
                     {{#if errors.city}}<div class="invalid-feedback">{{errors.city}}</div>{{/if}}
+                </div>
+
+                <div class="form-group mt-5">
+                    <div class="text-center">
+                        <label>Choose your photos</label>
+                    </div>
+                    <input type="file" name="list-photo" id="filename" value="{{list.pictures}}"
+                        class="form-control mt-2" />
                 </div>
 
                 <div class="form-actions text-center mt-5">

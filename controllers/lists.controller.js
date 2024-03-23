@@ -13,7 +13,23 @@ module.exports.doCreate = (req, res, next) => {
     
     list.owner = req.user.id;
 
-    List.create(list)
+    const {
+        title,
+        description,
+        owner
+    } = req.body;
+    
+    const body = {
+        title,
+        description,
+        owner
+    }
+
+    if (req.file) {
+        body.pictures = req.file.path
+    }
+
+    List.create(body)
         .then(() => res.redirect('/lists'))
         .catch((error) => {
             if (error instanceof mongoose.Error.ValidationError) {
@@ -28,7 +44,7 @@ module.exports.doCreate = (req, res, next) => {
 
 /** FIX: En el desplegable se muestras las listas de todos los usuarios */
 module.exports.viewLists = (req, res, next) => {
-    List.find()
+    List.find({ owner: req.user._id })
         .populate({
             path: 'owner'
         })

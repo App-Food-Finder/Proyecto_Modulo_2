@@ -16,6 +16,10 @@ const listSchema = new Schema(
             type: mongoose.Types.ObjectId,
             ref:'User',
             required: true
+        },
+        pictures:{
+            type: [String],
+            default: 'https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp'
         }
     },
     { timestamps: true }

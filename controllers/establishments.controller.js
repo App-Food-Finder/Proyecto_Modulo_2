@@ -71,7 +71,7 @@ module.exports.doCreate = (req, res, next) => {
 };
 
 module.exports.addToList = (req, res, next) => {
-    List.find()
+    List.find({ owner: req.user._id })
         .then(lists => {
             res.render('establishments/add-to-list', {
                 lists,
