@@ -1,11 +1,16 @@
 <!-- FIX: Se muestran las listas de todos los usuarios -->
+<div class="container">
+    <form class="form-inline" method="POST" action="/establishments/{{establishmentId}}/add-to-list">
+        <h2 class="text-white text-center" for="my-list">My lists</h2>
+        <select class="form-select form-select-lg mt-5" name="list">
+            {{#each lists as |list|}}
+                <option value="{{list.id}}">{{list.title}}</option>
+            {{/each}}
+        </select>
+    <div class="text-center">
+        <button name="add-button" class="raise text-black mt-5" type="submit">Add</button>
+    </div>
 
-<form method="POST" action="/establishments/{{establishmentId}}/add-to-list">
-    <select name="list">
-        {{#each lists as |list|}}
-            <option value="{{list.id}}">{{list.title}}</option>
-        {{/each}}
-    </select>
+    </form>
 
-    <button name="add-button" class="raise text-black" type="submit">Add</button>
-</form>
+</div>
