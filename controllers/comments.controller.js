@@ -4,8 +4,10 @@ const Establishment = require("../models/establishment.model");
 const mongoose = require("mongoose");
 
 module.exports.doCreate = (req, res, next) => {
+
   const establishmentId = req.params.establishmentId;
   Establishment.findById(establishmentId)
+
     .then((establishment) => {
       if (!establishment) {
         next(createError(404, "Establishment not found"));
@@ -13,6 +15,8 @@ module.exports.doCreate = (req, res, next) => {
         const comment = req.body;
         comment.owner = req.user.id;
         comment.establishment = establishmentId;
+
+
         return Comment.create(comment)
           .then(() => res.redirect(`/establishments/${establishmentId}`))
           .catch((error) => {

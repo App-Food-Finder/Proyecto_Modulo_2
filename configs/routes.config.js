@@ -57,7 +57,7 @@ router.get('/create-establishment', secure.isAuthenticated, establishments.creat
 router.post('/create-establishment', secure.isAuthenticated, parser.single('establishment-photo'), establishments.doCreate);
 
 //COMMENTS
-router.post('/establishments/:establishmentId/comments', secure.isAuthenticated, comment.doCreate);
+router.post('/establishments/:establishmentId/comments', secure.isAuthenticated, parser.single('comment-photos'), comment.doCreate);
 router.post('/establishments/:establishmentId/comments/:id/delete', secure.isAuthenticated, comment.doDelete);
 
 module.exports = router;
