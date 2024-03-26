@@ -24,13 +24,13 @@
             <p class="job_discription">{{currentUser.description}}</p>
         </div>
         <div class="button">
-            <div class="d-flex justify-content-center">
-                <button class="message"><a class="text-decoration-none text-black" href="/users/{{currentUser.id}}/edit">Edit account</a></button>
+            <div class="d-flex raise justify-content-center">
+                <button class="raise border-none"><a class="text-decoration-none text-black" href="/users/{{currentUser.id}}/edit">Edit</a></button>
             </div>
             <div>
                 <form action="/delete" method="post" class="d-flex justify-content-center mb-2">
                     <input type="hidden" name="_method" value="delete">
-                    <button type="submit" class="connect">Delete account</button>
+                    <button type="submit" class="raise border-black fa fa-trash bg-black"></button>
                 </form>
             </div>
         </div>
