@@ -3,13 +3,15 @@
             <button class="raise"><a class="link" href="/lists/{{lists.id}}/edit">Edit</a></button>
         </div>
 
+        <div class="mt-5">
+          <h1>{{lists.title}}</h1>
+          <h4>{{lists.description}}</h4>
+        </div>
 
-        <h1>{{lists.title}}</h1>
-        <h4>Description: {{lists.description}}</h4>
         <!--TODO: <h3>Owner: {{list.owner.username}}</h3>-->
 </div>
 
-<table class="table align-middle me-auto bg-white">
+<table class="table align-middle mt-5 bg-white">
   <thead class="bg-light">
     <tr>
       <th>Name</th>
@@ -41,12 +43,12 @@
         <p class="fw-normal mb-1">{{added.establishment.foodType}}</p>
       </td>
       <td>
-        <p class="fw-normal mb-1">{{added.establishment.price}}</p>
+        <p class="fw-normal mb-1">{{added.establishment.price}} €</p>
       </td>
       <td>
-        <div class="me-auto d-inline-block">
+        <div class="me-auto d-flex justify-content-end">
           <form action="/lists/{{added.list}}/establishments/{{added.establishment.id}}/delete" method="POST">
-            <button type="submit" style="color: black" class="raise fa fa-trash me-auto ml-5"></button>
+            <button type="submit" style="color: black" class="raise fa fa-trash ml-5"></button>
           </form>
         </div>
       </td>
