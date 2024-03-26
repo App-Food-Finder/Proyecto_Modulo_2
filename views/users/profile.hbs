@@ -1,41 +1,4 @@
-<div class="card row">
-    <div class="left col-lg-4">
-        <div class="photo-start d-flex justify-content-start mt-3 mb-2">
-            <img class="photo mx-3" style="border-radius: 50%" height="200px" src={{currentUser.photo}}>
-        </div>
-        <div class="d-flex align-items-start mt-2">
-            <div class="stat col-xs-4" style="padding-right: 50px;">
-                <p class="number-stat mx-4">0</p>
-                <p class="desc-stat">Followers</p>
-            </div>
-            <div class="stat col-xs-4" style="padding-right: 50px;">
-                <p class="number-stat mx-4">0</p>
-                <p class="desc-stat">Following</p>
-            </div>
-            <div class="stat col-xs-4" style="padding-right: 50px;">
-                <p class="number-stat mx-2">0</p>
-                <p class="desc-stat">Lists</p>
-            </div>
-        </div>
-    </div>
-        <div class="d-flex justify-content-end">
-            <div class="text-center">
-                <h4 class="name"> Username: {{currentUser.username}}</h4>
-                <p class="info">Email: {{currentUser.email}}</p>
-                <div class="card">
-                    <h5 class="description">Description: {{currentUser.description}}</h5>
-                </div>
-            </div>
-        </div>
-</div>
 
-<div>
-    <button class="d-flex justify-content-start mt-2 btn raise btn-outline-primary"><a href="/users/{{currentUser.id}}/edit">Edit</a></button>
-</div>
-<form action="/delete" method="post" class="d-flex justify-content-start mb-2">
-    <input type="hidden" name="_method" value="delete">
-    <button type="submit" class="btn raise btn-outline-danger mb-1">Delete</button>
-</form>
 
 <!-- TODO: Pintar listas del usuario por su owner
             <div class="container">
@@ -49,24 +12,8 @@
             </div>
         TODO: Hacer cards de listas y que, al clicar en una, te lleve a los detalles -->
 
-
-{{!-- OPTION 1 PROFILE CARD
- <div class="container d-flex justify-content-center">
-    <div class="flip-card">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <img src={{currentUser.photo}} class="avatar" style="width:300px;height:300px;">
-            </div>
-            <div class="flip-card-back mt-5">
-                <h1>{{currentUser.username}}</h1>
-                <p>{{currentUser.email}}</p>
-                <p>{{currentUser.description}}</p>
-            </div>
-        </div>
-    </div>
-</div> --}}
-<div class="body1">
-    <div class="box1 box2">
+<div class="body1 mt-5">
+    <div class="box1 box2 mt-5">
         <div class="content1">
         <div class="image1">
             <img src="{{currentUser.photo}}" alt="Profile Image">

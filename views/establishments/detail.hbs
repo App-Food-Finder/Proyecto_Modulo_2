@@ -27,16 +27,16 @@
 
 <form action="/establishments/{{establishment.id}}/comments" method="POST">
 
-    <div class="text-white mt-4">
-        <h3>Upload pictures</h3>
+    <div class="text-white mt-1">
+        <!--<h3>Upload pictures</h3>
         <div class="input-group mt-3">
             <input name="establishment-photo" value="{{establishment.pictures}}" type="file"></input>
-            <!-- TODO: Cambiar mensaje botón/ borrar mensaje "nada seleccionado" -->
-        </div>
+            <!-- TODO: Cambiar mensaje botón/ borrar mensaje "nada seleccionado" 
+        </div> -->
         <div class="mt-5" style="color: white">
             <h3>Leave a comment</h3>
         </div>
-        <div class="input-group mt-3">
+        <div class="input-group mt-1">
             <textarea class="form-control {{#if errors.text}}is-invalid {{/if}}" name="text"></textarea>
             <button class="btn btn-secondary" type="submit" value="{{message.text}}"><i class="fa fa-send fa-fw"></i></button>
             {{#if errors.text}} <div class="invalid-feedback">{{errors.text}}</div>{{/if}}
@@ -54,7 +54,7 @@
 <!-- FIN - APARTADO COMENTARIOS: -->
 
 {{#each establishment.comments as |comment|}}
-<div class="container my-3 py-3">
+<div class="container my-5 py-3">
     <div class="row d-flex justify-content-center">
       <div class="col-md col-lg-12 col-xl-12">
         <div class="card">
