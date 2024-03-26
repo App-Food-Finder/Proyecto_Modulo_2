@@ -2,14 +2,14 @@
     <div class="col-12 col-md-8 col-lg-6 col-xl-5 text-white">
     <form action="/users/{{user.id}}/edit" method="POST" enctype="multipart/form-data">
 
-        <div class="form-group mt-5">
+        <div class="form-group mt-4">
             <div class="text-center">
                 <label>Username</label>
             </div>
             <input name="username" type="username" value="{{user.username}}" class="form-control mt-2 {{#if errors.username}}is-invalid{{/if}}">
             {{#if errors.username}} <div class="invalid-feedback">{{errors.username}}</div>{{/if}}
         </div>
-        <div class="form-group mt-5">
+        <div class="form-group mt-4">
             <div class="text-center">
                 <label>Full name</label>
             </div>
@@ -17,7 +17,7 @@
             {{#if errors.name}} <div class="invalid-feedback">{{errors.name}}</div>{{/if}}
         </div>
 
-        <div class="form-group mt-5">
+        <div class="form-group mt-4">
             <div class="text-center">
                 <label>Email</label>
             </div>
@@ -26,7 +26,7 @@
         </div>
 
                         
-        <div class="form-group mt-5">
+        <div class="form-group mt-4">
             <div class="text-center">
                 <label>Phone number</label>
             </div>
@@ -34,7 +34,7 @@
             {{#if errors.phone}} <div class="invalid-feedback">{{errors.phone}}</div>{{/if}}
         </div>
 
-        <div class="form-group mt-5">
+        <div class="form-group mt-4">
             <div class="text-center">
                 <label>Description</label>
             </div>
@@ -42,7 +42,7 @@
             {{#if errors.description}} <div class="invalid-feedback">{{errors.description}}</div>{{/if}}
         </div>
 
-        <div class="form-group mt-5">
+        <div class="form-group mt-4">
             <div class="text-center">
                 <label>Choose your profile photo</label>
             </div>
